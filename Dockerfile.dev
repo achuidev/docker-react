@@ -1,0 +1,10 @@
+FROM node:14-alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# COPY . . commented as I am using Volumes in docker-compose.yml
+
+CMD ["npm", "run", "start"]
