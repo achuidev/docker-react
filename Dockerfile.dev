@@ -1,10 +1,10 @@
-FROM node:14-alpine
+FROM node:lts-alpine
 
 WORKDIR '/app'
 
 COPY package.json .
 RUN npm install
 
-# COPY . . commented as I am using Volumes in docker-compose.yml
+COPY . .
 
 CMD ["npm", "run", "start"]
